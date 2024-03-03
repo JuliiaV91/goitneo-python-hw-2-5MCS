@@ -18,7 +18,7 @@ class Phone(Field):
         if len (phone) == 10:
             super().__init__(phone)
         else: 
-            print ("Enter 10 characters.") 
+            print ("Enter 10 characters.")  
     
 class Record:
     def __init__(self, name):
