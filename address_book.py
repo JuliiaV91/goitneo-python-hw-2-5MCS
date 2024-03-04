@@ -63,7 +63,9 @@ class AddressBook(UserDict):
 
     def delete (self, name):
         del self.data [name]
-        print ("Done")
+        print (f"{name} is deleted.")
+        for name, r in self.data.items ():
+            print (f"{r} exists.")
             
 
 # Створення нової адресної книги
@@ -82,6 +84,13 @@ jane_record = Record("Jane")
 jane_record.add_phone("9876543210")
 book.add_record(jane_record)
 
+julia_record = Record("Julia")
+julia_record.add_phone("6666677777")
+book.add_record(julia_record)
+
+mary_record = Record("Mary")
+mary_record.add_phone("4444445555")
+book.add_record(mary_record)
     # Виведення всіх записів у книзі
 for name, record in book.data.items():
     print(record)
@@ -100,7 +109,9 @@ jane = book.find ("Jane")
 found_phone = jane.find_phone ("9876543210")
 print(f"{jane.name}: {found_phone}")
     # Видалення запису Jane
-book.delete("Jane") # Виведення: Done
+book.delete("Jane") # Виведення:  Jane is deleted.
+book.delete ("Julia") # Виведення:  Julia is deleted.
     # Виведення записів у книзі після видалення
 for name, record in book.data.items():
     print(record)
+
